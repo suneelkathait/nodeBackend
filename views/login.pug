@@ -1,5 +1,33 @@
-extends layout
+extends site/layouts/blank_layout
 block content
-	.container
+	.container.padding-top-login
 		.row
-			.col-xs-12
+			.col-sm-offset-2.col-md-offset-3.col-xs-10.col-sm-8.col-md-6
+				p.bg-success
+					| Success
+					button.close(type='button', aria-label='Close')
+						span(aria-hidden='true') ×
+				p.bg-danger
+					| Failed
+					button.close(type='button', aria-label='Close')
+						span(aria-hidden='true') ×
+
+
+				form.form-horizontal.login_form
+					.form-group
+						label.col-sm-2.control-label(for='email') Email
+						.col-sm-10
+							input#email.form-control(type='email', placeholder='Email')
+					.form-group
+						label.col-sm-2.control-label(for='password') Password
+						.col-sm-10
+							input#password.form-control(type='password', placeholder='Password')
+					.form-group
+						.col-sm-offset-2.col-sm-10
+							.checkbox
+								label
+									input(type='checkbox')
+									|  Remember me
+					.form-group
+						.col-sm-offset-2.col-sm-10
+							button.btn.btn-default(type='submit') Sign in

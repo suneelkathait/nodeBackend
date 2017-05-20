@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.get('/login', function(req, res, next) {
- res.render('login', { title: 'Login' });
+ res.render('login', { title: 'Login', main_class:'padding_top100' });
 });
 
 
@@ -45,7 +45,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('site/error');
 });
 
 module.exports = app;
